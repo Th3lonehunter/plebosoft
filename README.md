@@ -9,14 +9,14 @@ The Plebosoft project website.
 
 ## Committing changes to GitHub
 - Open up the Plebosoft SSH Terminal in CodeAnywhere and write out the following lines to commit changes:
-'''
+```
 git add -A
-'''
-'''
+```
+```
 git commit -am "message"
-'''
-'''
+```
+```
 git push origin master
-'''
+```
 This will push the changes to GitHub. 
 Please remember to put a meaningful message where "message" is so that we can keep track of the changes made.
