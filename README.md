@@ -2,12 +2,10 @@
 The Plebosoft project website. 
 
 ## Connecting CodeAnywhere with GitHub
-- Create an account with CodeAnywhere.
-- Connect your CodeAnywhere account with your GitHub account.
-- Create a new connection in CodeAnywhere, go to GitHub and the repository should show up.
-- You now have access to all the GitHub files from CodeAnywhere. 
-
-* [CodeAnywhere](https://codeanywhere.com/)
+* Create an account with [CodeAnywhere](https://codeanywhere.com/).
+* Connect your CodeAnywhere account with your GitHub account.
+* Create a new connection in CodeAnywhere, go to GitHub and the repository should show up.
+* You now have access to all the GitHub files from CodeAnywhere.
 
 ## Committing changes to GitHub
 - Open up the Plebosoft SSH Terminal in CodeAnywhere and write out the following lines to commit changes:
