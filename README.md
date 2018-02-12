@@ -8,7 +8,7 @@ The Plebosoft project website.
 * You now have access to all the GitHub files from CodeAnywhere.
 
 ## Committing changes to GitHub
-* Open up the Plebosoft SSH Terminal in CodeAnywhere and write out the following lines to commit changes:
+Open up the Plebosoft SSH Terminal in CodeAnywhere and write out the following lines to commit changes:
 ```
 git add -A
 ```
