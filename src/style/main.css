@@ -86,9 +86,6 @@ body {
 
 .login ul li {
 	float: left;
-	display: block;
-	margin:0;
-	padding:0;
 	position:relative;
 	right:50%;
 	display: flex;
