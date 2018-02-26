@@ -20,10 +20,10 @@ Always ensure you have the latest version of the repository, do this by the foll
 git pull origin master
 ```
 * Press enter and you are met with a terminal screen. At this, do the following:
-** press i and type the merge message
-** press escape
-** type ":wq"
-** press enter
+  * press i and type the merge message
+  * press escape
+  * type ":wq"
+  * press enter
 
 This will keep your local files in CodeAnywhere up-to-date.
 
