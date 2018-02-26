@@ -1,0 +1,10 @@
+﻿A newer version of the database design has been shown, but further alteration was proposed by developers and the product owner. There are numerous tables which had some issues as we were told by the developers. Some tables were not linked together which might cause issues within a relational model. Unfortunately our database designer could not make it into this meeting so it postpones developing with a couple of days. A second opinion was taken into this. 
+
+
+With the user it became clear that every user can see all ideas but only post within their own department. It means that everyone can look at every post from every department and might adapt a couple of those into their own department. 
+
+
+A nice to have feature proposed by the customer which is a ban functionality for users. 
+
+
+For this meeting, Martin, Andrew, Will, Mahbub were present.

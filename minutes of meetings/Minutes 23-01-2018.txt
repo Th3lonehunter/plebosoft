@@ -1,0 +1,15 @@
+﻿Having agreed that we will use PHP on the Unix server and MySQL on PHPMyAdmin. On the PHP database side MySQLi is chosen because of the reliability. We will use Flexbox for the responsive design. For this meeting, everyone attended in the team. 
+We discussed our strengths and weaknesses and based upon that we chose the suitable roles for everyone. There are some overlaps in terms of strengths in our team, but obviously those who are strong in more than one area can help others in the long run. 
+
+
+In the first meeting with the customer, it became clear that for example the staff has to have access for a personal space where they can change their avatar picture and give or change their own nicknames.
+It is also worth noting that the every post what the users make should support multiple documents and users who browse other posts can report those. 
+
+
+Roles:
+Martin Korodi – Product Owner/CSS design
+Mahbub Hussain – Scrum Master/Testing
+Sebastian Tulbure – Database Designer
+Andrew Watt – Front-end Developer
+Will Hutchings – Back-end Developer
+Hannan Ali – Tester

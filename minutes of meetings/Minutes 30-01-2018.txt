@@ -1,0 +1,13 @@
+﻿This week it has been discussed how the registration system will work. The system will require an email which will check in database if it’s valid or not. If it is, a temporary password will be provided on that email, which will allow the user to register. Upon first login, the user will be forced to change their passwords and accept the terms and conditions and set up their nicknames.
+
+
+We assume that we have data from the University database containing the name and the email to achieve what said above. 
+
+
+For next week the database crow's foot notation diagram was proposed. 
+
+
+From the user we know that the administrator must have an interface to do his/her job. They should be able to add, remove staff members if necessary and set up dates for the voting. 
+
+
+Martin, Mahbub, Sebastian and Will were present during this meeting.

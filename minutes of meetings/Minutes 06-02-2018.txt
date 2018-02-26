@@ -1,0 +1,13 @@
+﻿The group set up the repository system on GitHub and decided to use that as the main source for storing the code and other project related documents. The group also agreed on a couple of user stories, such as how the basic user want to interact with the system. 
+
+
+More user stories was made by the product owner covering every aspect and element of the website on the Trello page the group is using. 
+
+
+The front page of the website was started to take shape as a design and the developers also agreed on a IDE system which allows them to work on the same code at the same time. 
+
+
+The database crow's foot diagram was made, but as pointed out by some of the developers, further changes are needed to make it work well within the frame of the proposed intranet. 
+
+
+Martin, Mahbub, Sebastian, Will and Andrew were present during this meeting.

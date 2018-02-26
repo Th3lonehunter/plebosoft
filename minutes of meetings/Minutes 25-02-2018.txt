@@ -1,0 +1,10 @@
+﻿During this meeting we discussed the troubles raised by the developers and the product owner about the database. The database designer took notes on our point of view and asked for a further meeting where he can share his point of view. 
+
+
+The missing parts such as an avatar picture and removing the telephone number was noted by him too and said he will fix it before the next meeting. 
+
+
+In the meeting, it was discussed that one user story needed a small fixing in terms that the report system was not included in. 
+
+
+For this meeting, Martin, Mahbub, Will and Sebastian were present.
