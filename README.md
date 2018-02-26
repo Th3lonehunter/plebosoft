@@ -12,7 +12,7 @@ If you have any issues with GitHub or need help, speak to Drew.
 * Create a new connection in CodeAnywhere, go to GitHub and the repository should show up.
 * You now have access to all the GitHub files from CodeAnywhere.
 
-## Ensure you pull the repository before trying to push changes!
+## Ensure you pull the repository before making changes!!!
 Always ensure you have the latest version of the repository, do this by the following:
 
 * When you start a new session, open up the SSH Terminal and type:
