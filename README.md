@@ -1,5 +1,10 @@
 # Plebosoft
-The Plebosoft project website. 
+The Plebosoft project repository. 
+
+## General Information
+Keep the repository up-to-date with changes to ensure that we are always working with the current version.
+
+If you have any issues with GitHub or need help, speak to Drew.
 
 ## Connecting CodeAnywhere with GitHub
 * Create an account with [CodeAnywhere](https://codeanywhere.com/).
