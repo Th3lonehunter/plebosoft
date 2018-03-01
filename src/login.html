@@ -1,22 +1,52 @@
 <!DOCTYPE html>
-  
+
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/main.css">
-    
-    
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Greenwich University Commenting - Login</title>
   </head>
-  
+
   <body>
-    <div class="container">
-      <div class="content">
-        <p>
-          login form will be here
-        </p>
+    <div class="page">
+
+      <!-- Header -->
+      <div class="section header">
+        <div class="nav">
+          <div class="nav-home"><a href="#">Home</a></div>
+          <div class="nav-login"><a href="#">Login</a></div>
+        </div>
       </div>
+
+      <!-- Login Form -->
+      <div class="section login">
+        <form action="">
+          <div class="login-form">
+            <div class="login-title">Login to the Greenwich University Commenting System</div>
+            <form action="" method="post" class="form-login">
+              <div class="form-username">
+                <label class="user" for="login-username"><span class="hidden">Username</span></label>
+                <input id="login-username" type="text" class="form-input" placeholder="Username" required>
+              </div>
+              <div class="form-password">
+                <label class="lock" for="login-password"><span class="hidden">Password</span></label>
+                <input id="login-password" type="text" class="form-input" placeholder="Password" required>
+              </div>
+              <div class="form-submit">
+                <input type="submit" value="log in">
+              </div>
+            </form>
+          </div>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <div class="section footer">
+        <div class="foot">Test text for footer</div>
+      </div>
+
     </div>
   </body>
-  
-  
+
+
 </html>
