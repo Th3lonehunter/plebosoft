@@ -15,7 +15,6 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-
 .section {
   width: 100%;
   display: flex;
@@ -30,17 +29,14 @@ body {
   padding: 20px 0;
   background-color: rgba(240,240,240,1);
 }
-
 .nav {
   width: 50%;
   display: flex;
   justify-content: space-between;
 }
-
 .nav-login {
   margin-left: 20px;
 }
-
 a:link, a:visited {
   color: Black;
   text-decoration: none;
@@ -67,7 +63,6 @@ a:hover {
   right: 0;
   bottom: 0;
 }
-
 .login {
   margin: auto;
   padding: 2em;
@@ -76,17 +71,14 @@ a:hover {
   background: rgba(100,100,100,0.5);
   border-radius: 5px;
 }
-
 .form-username {
   padding-top: 1em;
 }
-
 .login-form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
-
 input {
   color: charcoal;
   background-color: rgba(200,200,200,.5);
@@ -114,7 +106,7 @@ input {
     padding: 2em;
     padding-bottom: 3em;
     border-radius: 8px;
-    max-width: 500px;
+    max-width: 960px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -129,7 +121,7 @@ input {
     padding: 2em;
     padding-bottom: 3em;
     border-radius: 8px;
-    max-width: 500px;
+    max-width: 960px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
