@@ -13,7 +13,7 @@
       <!-- Login Form -->
       <div class="centered">
         <div class="login">
-          <form action="">
+          <form action="/src/php/LoginParse.php" method="POST">
             <div class="login-form">
               <div class="photo">
                 <img src="images/greenwich-logo.png" alt="">

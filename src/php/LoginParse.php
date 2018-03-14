@@ -17,21 +17,23 @@ if (isset($_POST['login-username'])){
   $password = strip_tags($password);
   $password = mysqli_real_escape_string($dblink, $password);
   
-  $sql = "SELECT * FROM ***** WHERE USERNAME='".$username."' AND PASSWORD='".$password."' LIMIT 1";
+  $sql = "SELECT * FROM Plebosoft_Staff INNER JOIN Plebosoft_Users ON Plebosoft_Staff.staffID = Plebosoft_Users.staffID WHERE Plebosoft_Staff.userName='".$username."' AND Plebosoft_Staff.password='".$password."' LIMIT 1";
   $res = mysqli_query($dblink,$sql) or die(mysqli_error());
   if(mysqli_num_rows($res)==1){
     $row = mysqli_fetch_assoc($res);
-    $_SESSION['uid'] = $row['UserID'];
-    $_SESSION['username'] = $row['username'];
-    $_SESSION['Ban'] = $row['ban'];
-    $_SESSION['cantPost'] = $row['CantPost'];
-    $_SESSION['ACLVL'] = $row['ACLVL'];
+    $_SESSION['uid'] = $row['staffID'];
+    $_SESSION['username'] = $row['userName'];
+    $_SESSION['Ban'] = $row['isBanned'];
+    $_SESSION['NickName'] = $row['nickName'];
+    $_SESSION['roleID'] = $row['roleID'];
+    $_SESSION['departmentID'] = $row['departmentID'];
     $_SESSION['firstName'] = $row['firstName'];
+    $_SESSION['email'] = $row['email'];
   }else{
-    header("Location: home.php?login_failed");
+    header("Location: ../src/login.php?login_failed");
   }
   
   
 }else{
-  header("Location: home.php?login_failed");
+  header("Location: ../src/login.php?login_failed");
 }
