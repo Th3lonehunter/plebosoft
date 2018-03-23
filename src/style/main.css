@@ -47,6 +47,16 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Main */
+.main-body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: auto;
+  width: 60em;
+  padding: 1em;
+}
+
 /* Footer */
 .footer {
   background-color: rgba(240,240,240,1);
@@ -54,14 +64,6 @@ a:hover {
 }
 
 /*Terms and Conditions*/
-.tc {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin: auto;
-  width: 60em;
-}
-
 .tc-submit {
   text-decoration: ;
   text-align: center;
