@@ -13,7 +13,7 @@
       <!-- Login Form -->
       <div class="centered">
         <div class="login">
-          <form action="">
+          <form action="/src/php/LoginParse.php" method="POST">
             <div class="login-form">
               <div class="photo">
                 <img src="images/greenwich-logo.png" alt="">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-password">
                   <label class="lock" for="login-password"><span class="hidden"></span></label>
-                  <input id="login-password" type="text" class="form-input" placeholder="Password" required>
+                  <input id="login-password" type="password" class="form-input" placeholder="Password" required>
                 </div>
                 <div class="login-captcha">
                   <?php

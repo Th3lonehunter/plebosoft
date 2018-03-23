@@ -37,8 +37,6 @@ h1 {
   width: 50%;
   display: flex;
   justify-content: space-between;
-}
-.nav-user {
   margin-left: 20px;
 }
 a:link, a:visited {
