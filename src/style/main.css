@@ -38,7 +38,11 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
+<<<<<<< HEAD
 .nav-user {
+=======
+.nav-login {
+>>>>>>> 0cfafc4bfe16c6fd7e70513020c1fd0b045b5d74
   margin-left: 20px;
 }
 a:link, a:visited {
