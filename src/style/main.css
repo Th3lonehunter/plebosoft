@@ -37,15 +37,6 @@ h1 {
   width: 50%;
   display: flex;
   justify-content: space-between;
-<<<<<<< HEAD
-=======
-}
-<<<<<<< HEAD
-.nav-user {
-=======
-.nav-login {
->>>>>>> 0cfafc4bfe16c6fd7e70513020c1fd0b045b5d74
->>>>>>> 2f4b8f6128c6f09e37fd2862e2e5532855dd69aa
   margin-left: 20px;
 }
 a:link, a:visited {
