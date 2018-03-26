@@ -24,11 +24,11 @@
           <div class="table">
             <!-- You can recursively generate new rows by retrieving the subjects from the database -->
             <div class="idea-row">
-              <a href="subject.html">Computing</a>
+              <a href="subject.php">Computing</a>
               <p>The computing department, follow this to see all computing Ideas.</p>
             </div>
             <div class="idea-row">
-              <a href="subject.html">Art and Design</a>
+              <a href="subject.php">Art and Design</a>
               <p>The Art and Design department, follow this to see all Art and Design Ideas.</p>
             </div>
           </div>
@@ -36,9 +36,6 @@
       </div>
 
 
-      </div>
-
-      </div>
     </div>
   </body>
 </html>
