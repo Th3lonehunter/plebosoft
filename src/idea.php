@@ -19,7 +19,21 @@
       </div>
 
       <div class="section">
-        <h1>Idea Title - Retrieves the title from Database</h1>
+        <div class="main-body">
+          <h3>Idea Title - Retrieves the title from Database</h3>
+          <div class="idea-text">
+            <p>The Idea text here.</p>
+            <div class="idea-info">
+              <div>
+                <p>By Tim</p>
+              </div>
+              <div>
+                <p>Date/Time</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="comment-container">
 
           <!-- Need to get the total comments

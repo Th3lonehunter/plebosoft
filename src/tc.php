@@ -37,7 +37,7 @@
 
           <br>
 
-          <a href="home.html" class="tc-submit">I Agree - Proceed</a>
+          <a href="home.php" class="tc-submit">I Agree - Proceed</a>
 
         </div>
       </div>

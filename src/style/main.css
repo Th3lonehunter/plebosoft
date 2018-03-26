@@ -71,59 +71,63 @@ a:hover {
   font-weight: bold;
 }
 
-/* Table Styles */
-.main-table {
+/* Category List */
+.table-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  padding: 1em;
 }
-table {
-  border-collapse: collapse;
+    .heading-row{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: .5em;
+      border: 1px solid black;
+    }
+      .idea-row {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid black;
+        padding: 1em;
+      }
+        .idea-user {
+          display: flex;
+          width: 100%;
+          justify-content: flex-end;
+          font-size: small;
+        }
+
+/* New Idea */
+.new-idea {
+  margin: auto;
+  padding: 2em;
   width: 100%;
 }
-table a {
-  color: #000;
+.idea-wrapper {
+  background: rgba(100,100,100,0.5);
+  border-radius: 5px;
 }
-table a:hover {
-  color: #373737;
-  text-decoration: none;
+.idea-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
-th {
-  background-color: #B40E1F
-  color: #F0F0F0;
-}
-td {
-  padding: 5px;
-}
-
-/* Menu Styles */
-.item {
-    background-color: #00728B;
-    border: 1px solid #032472;
-    color: #FFF;
-    font-family: Arial;
-    padding: 3px;
-    text-decoration: none;
-}
-.leftpart {
-    width: 70%;
-}
-.rightpart {
-    width: 30%;
-}
-.small {
-    font-size: 75%;
-    color: #373737;
-}
-cat-post {
-  height: 100px;
-}
-post-content {
-  padding: 30px;
-}
-textarea {
-  width: 500px;
-  height: 200px;
-}
+  .idea-form input {
+    color: charcoal;
+    background-color: rgba(200,200,200,.5);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    border: none;
+    border-radius: 4px;
+    padding: 1em;
+    margin-bottom: 1.2em;
+    width: 100%;
+    &:focus;
+      outline: none;
+  }
 
 /* Comments */
 .comment {
@@ -275,6 +279,18 @@ input {
   width: 100%;
   &:focus;
     outline: none;
+}
+
+/* Ideas */
+.idea-text {
+  padding: 1em;
+}
+.idea-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: small;
 }
 
 /* Mobile Style */

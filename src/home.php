@@ -19,19 +19,21 @@
       </div>
 
       <div class="main-body">
-        <div class="main-table">
-          <tr>
-            <td class="leftpart">
-              <!-- PHP needed here to direct to the correct subject. -->
-              <h3><a href="subject.html?id=">Test category</a></h3>
-                Subject info.
-            </td>
-            <td class="rightpart">
-              <!-- PHP needed here for the recent idea. -->
-              <a href="idea.html?id=">Idea</a>
-            </td>
-          </tr>
+        <h3>Please select a Subject from the table below to view all ideas for each:</h3>
+        <div class="table-container">
+          <div class="table">
+            <!-- You can recursively generate new rows by retrieving the subjects from the database -->
+            <div class="idea-row">
+              <a href="subject.html">Computing</a>
+              <p>The computing department, follow this to see all computing Ideas.</p>
+            </div>
+            <div class="idea-row">
+              <a href="subject.html">Art and Design</a>
+              <p>The Art and Design department, follow this to see all Art and Design Ideas.</p>
+            </div>
+          </div>
         </div>
+      </div>
 
 
       </div>
