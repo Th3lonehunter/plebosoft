@@ -41,7 +41,7 @@ Find percentage of ideas per each department
 SELECT 
 	d.name AS DepartmentName, 
     IQ.ideaCount AS ideas, 
-    (IQ.ideaCount/(select Count(PI.ideaID) from Plebosoft_Ideas AS PI)* 100) AS Percentage
+    FLOOR(IQ.ideaCount/(select Count(PI.ideaID) from Plebosoft_Ideas AS PI)* 100) AS Percentage
 FROM 
 	Plebosoft_Departments d,
     (Select 
