@@ -33,12 +33,12 @@ $sql = "SELECT * FROM Plebosoft_Staff WHERE userName='".$username."' AND passwor
     $DID = $row['departmentID'];
     
   }else{
-    header("Location: login.html?login_failed");
+    header("Location: login.php?login_failed");
   }
   
   
 }else{
-  header("Location: login.html?login_failed");
+  header("Location: login.php?login_failed");
 }
 
 $role = 1;
