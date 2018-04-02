@@ -11,7 +11,7 @@ include_once("../src/php/DBConnect.php");
         $sql = "SELECT * FROM Plebosoft_Departments";
             $res = mysqli_query($dblink,$sql) or die(mysqli_error());
 ?>
-<form action="" method="POST">
+<form action="../src/php/IdeaTagParse.php" method="POST">
   
 
 <select name="Select-tag">
