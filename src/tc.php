@@ -1,3 +1,9 @@
+<?php
+session_start();
+  ob_start();
+include_once("../src/php/DBConnect.php");
+
+?>
 <!DOCTYPE html>
 
   <head>
@@ -10,7 +16,7 @@
   <body>
     <div class="page">
 
-      <!-- Login Form -->
+      
       <div class="centered">
         <div class="main-body">
           <h1>Welcome to the Greenwich University Comment System</h1>
@@ -37,8 +43,10 @@
 
           <br>
 
-          <a href="home.php" class="tc-submit">I Agree - Proceed</a>
-
+          <?php
+          
+          echo "<a href='../src/php/tcparse.php?id={$_SESSION['uid']}' class='tc-submit'>I Agree - Proceed</a>";
+?>
         </div>
       </div>
 

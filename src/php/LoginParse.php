@@ -1,14 +1,16 @@
 <?php
+#http://stumyadmin.cms.gre.ac.uk
 ob_start();
 include_once("DBConnect.php");
 session_start();
 
-if (isset($_POST['login-username'])){
+    
+if (isset($_POST['login-username']) && isset($_POST['login-password'])){
   $username ="";
   $password="";
   
-  $username .= $_POST['username'];
-  $password .= $_POST['password'];
+  $username .= $_POST['login-username'];
+  $password .= $_POST['login-password'];
 
   $username = stripcslashes($username);
   $username = strip_tags($username);
@@ -17,7 +19,7 @@ if (isset($_POST['login-username'])){
   $password = strip_tags($password);
   $password = mysqli_real_escape_string($dblink, $password);
   
-  $sql = "SELECT * FROM Plebosoft_Staff INNER JOIN Plebosoft_Users ON Plebosoft_Staff.staffID = Plebosoft_Users.staffID WHERE Plebosoft_Staff.userName='".$username."' AND Plebosoft_Staff.password='".$password."' LIMIT 1";
+  $sql = "SELECT * FROM Plebosoft_Staff INNER JOIN Plebosoft_Users ON Plebosoft_Staff.staffID = Plebosoft_Users.userID WHERE Plebosoft_Staff.userName='".$username."' AND Plebosoft_Staff.password='".$password."' LIMIT 1";
   $res = mysqli_query($dblink,$sql) or die(mysqli_error());
   if(mysqli_num_rows($res)==1){
     $row = mysqli_fetch_assoc($res);
@@ -29,11 +31,33 @@ if (isset($_POST['login-username'])){
     $_SESSION['departmentID'] = $row['departmentID'];
     $_SESSION['firstName'] = $row['firstName'];
     $_SESSION['email'] = $row['email'];
-  }else{
-    header("Location: ../src/login.php?login_failed");
-  }
-  
-  
+    $_SESSION['logindate'] = $row['lastLogin'];
+    $_SESSION['terms'] = $row['hasAgreedTerms'];
+    $_SESSION['Image']= $row['avatarPhoto'];
+    $logdate = date('Y-m-d'); 
+    
+      
+    $sql2 = mysqli_query($dblink,"UPDATE Plebosoft_Users SET lastLogin='".$logdate."' WHERE userID='".$_SESSION['uid']."'");
+      if($sql2){
+          if($_SESSION['terms']==1 ){
+             header("location: ../home.php");
+           exit();
+          }else if($_SESSION['terms']!=1 && $_SESSION['NickName'] == ""){
+              header("location: ../Nickname_TC.php?id={$_SESSION['uid']}");
+          }else{
+              header("location: ../tc.php?id={$_SESSION['uid']}");
+          }
+      }else{
+          
+      }
+    
 }else{
-  header("Location: ../src/login.php?login_failed");
+    
+ header("Location: ../login.php?login_failed");
 }
+}else{
+   
+ header("Location: ../login.php?login_failed");
+}
+
+?>

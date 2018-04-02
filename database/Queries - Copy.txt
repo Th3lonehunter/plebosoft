@@ -1,0 +1,78 @@
+
+******************************
+Find out the number of users per each department
+SELECT Count(s.staffID) AS UsersPerDepartment, d.departmentID, d.name
+	 FROM Plebosoft_Departments d, Plebosoft_Staff s
+     WHERE d.departmentID = s.departmentID
+     GROUP BY departmentID
+     ORDER BY departmentID;
+******************************
+Find the number of ideas per each department
+     
+ Select d.name AS DepartmentName, COUNT(i.ideaID) AS NumberOfIdeas
+	  	 FROM Plebosoft_Ideas i, Plebosoft_Staff s, Plebosoft_Departments d
+	  	 WHERE i.userID = s.staffID
+         AND s.departmentID = d.departmentID
+     	 GROUP BY s.departmentID;
+
+******************************
+Find out anonymous ideas and comments
+SELECT COUNT(Plebosoft_Ideas.ideaID) AS AnonymousIdeas
+FROM Plebosoft_Ideas
+WHERE Plebosoft_Ideas.isAnnonymus = 1;
+
+SELECT COUNT(Plebosoft_Comments.commentID) AS AnonymousComments
+FROM Plebosoft_Comments
+WHERE Plebosoft_Comments.isAnnonymus = 1;
+
+
+*****************************
+Find out all the ideas that do not have a comment
+SELECT Plebosoft_Ideas.ideaID, Plebosoft_Ideas.title
+FROM Plebosoft_Ideas
+LEFT JOIN Plebosoft_Comments ON Plebosoft_Ideas.ideaID=Plebosoft_Comments.ideaID
+WHERE ISNULL(Plebosoft_Comments.commentID)
+ORDER BY Plebosoft_Ideas.ideaID;
+
+
+*********************************
+Find percentage of ideas per each department
+
+SELECT 
+	d.name AS DepartmentName, 
+    IQ.ideaCount AS ideas, 
+    FLOOR(IQ.ideaCount/(select Count(PI.ideaID) from Plebosoft_Ideas AS PI)* 100) AS Percentage
+FROM 
+	Plebosoft_Departments d,
+    (Select 
+    	d.departmentID, 
+      	d.name, 
+      	COUNT(i.ideaID) AS ideaCount
+	 FROM Plebosoft_Ideas i, Plebosoft_Staff s, Plebosoft_Departments d
+	 WHERE i.userID = s.staffID
+     AND s.departmentID = d.departmentID
+     GROUP BY s.departmentID) AS IQ 
+WHERE d.departmentID = IQ.departmentID
+GROUP BY d.departmentID;
+
+
+***********************************
+Find the number of idea contribuitions by each department
+
+SELECT COUNT(u.userID) AS Ideas_Contributors,d.name AS DepartmentName
+FROM Plebosoft_Users u, Plebosoft_Staff s, Plebosoft_Ideas i, Plebosoft_Departments d
+WHERE u.userID = i.userID
+AND s.departmentID = d.departmentID
+AND s.staffID = u.userID
+GROUP BY d.departmentID;
+
+Find the number of comments contributions by each department
+
+SELECT DISTINCT COUNT(u.userID) AS Comment_Contributors, d.name AS DepartmentName
+FROM Plebosoft_Users u, Plebosoft_Staff s, Plebosoft_Ideas i, Plebosoft_Departments d, Plebosoft_Comments c 
+WHERE c.userID = u.userID
+AND  c.ideaID = i.ideaID
+AND s.departmentID = d.departmentID
+AND s.staffID = u.userID
+GROUP BY d.departmentID;
+
