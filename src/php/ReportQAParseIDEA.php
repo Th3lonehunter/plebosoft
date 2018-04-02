@@ -11,14 +11,14 @@ if(isset($_POST['Submit'])){
     $res = mysqli_query($dblink,$sql) or die(mysqli_error());
     if(mysqli_num_rows($res)==1){
     $row = mysqli_fetch_assoc($res);
-        $ID = row['ideaID'];
+        $ID = $row['ideaID'];
         if(isset($_POST['Submit'])){
             
             $sql5="SELECT * FROM Plebosoft_Ideas WHERE ideaID='".$ID."'";
             $res5 = mysqli_query($dblink,$sql5) or die(mysqli_error());
            if(mysqli_num_rows($res5)==1){
             $row5 = mysqli_fetch_assoc($res5);
-            $userID= row5['userID'];
+            $userID= $row5['userID'];
                
             if($_POST['Submit'] == "Delete"){
                 $del = true;

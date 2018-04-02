@@ -16,7 +16,7 @@
             <div>
               <h3>Reported Ideas</h3>
               <?php
-                include "php/ReportQAParseIDEA.php";
+               // include "php/ReportQAParseIDEA.php";
               ?>
             </div>
           </div>
@@ -25,7 +25,7 @@
             <div>
               <h3>Reported Comments</h3>
               <?php
-                include "php/ReportQAParsecomemnt.php";
+              //  include "php/ReportQAParsecomemnt.php";
               ?>
             </div>
           </div>
@@ -36,19 +36,19 @@
           <div>
             <h3>Number of Posts per Department</h3>
             <?php
-              include "Stat_test.php";
+            //  include "Stat_test.php";
             ?>
           </div>
           <div>
             <h3>Number of Comments per Department</h3>
             <?php
-              include "Stat_test2.php";
+            //  include "Stat_test2.php";
             ?>
           </div>
           <div>
             <h3>Top 5 Ideas</h3>
             <?php
-              include "Stat_test3.php";
+           //   include "Stat_test3.php";
             ?>
           </div>
         </div>
