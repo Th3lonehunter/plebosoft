@@ -26,9 +26,14 @@ else {
 }
             
     if(isset($_SESSION['terms'])){ 
+        $ax = isset($_GET['ax']);
       echo"</div>
-      </div>
-      <div class='section'>
+      </div>";
+        ?>
+          <?php if($ax): ?><p>Idea already Present</p>   
+                <?php endif; ?>
+            <?php
+     echo "<div class='section'>
         <div class='new-idea'>
           <form action='../src/php/IdeaParse.php' method='POST' enctype='multipart/form-data'>
             <div class='idea-form'>

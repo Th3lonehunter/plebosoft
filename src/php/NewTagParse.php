@@ -5,7 +5,7 @@ session_start();
 
 
 	if(isset($_SESSION['uid'])){
-		if($_SESSION['add referance'] == 1 || $_SESSION['add referance'] == 2 || $_SESSION['add referance'] == 4){
+		if($_SESSION['roleID'] == 1 || $_SESSION['roleID'] == 2 || $_SESSION['roleID'] == 4){
 		if(isset($_POST['TagText'])){
 			
 			$TagText="";
@@ -20,17 +20,17 @@ session_start();
             if(($res1)){
 				header("Location: ");
 			}else{
-				header('Location: ');
+				header("location: ../home.php?databaseFailure");
 				}
 		}else{
-			header('Location: ');
+			header("location: ../home.php?newTF");
 		}
 		
 		}else{
-			header('Location: ');
+			header('Location: ../home.php');
 		}
 		
 	}else{
-		header('Location: ');
+		header('Location: ../home.php');
 	}
 ?>

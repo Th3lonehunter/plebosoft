@@ -24,9 +24,9 @@ if (isset($_POST['tagssub'])){
             echo $_POST['Select-tag'];
             header("Location: ../Option_code.php?id={$IDeaID}");
         }else{
-            echo " There was a problem with the creation of you user Post plase try again or contact suport staff";
+            header("Location: ../home.php?databaseFailure");
             }
-        }else{echo "Failed to get catagory";}
+        }else{header("Location: ../home.php?catFail");}
 
  
     }else if($_POST['tagssub'] == "Add Tag and go to Home"){
@@ -48,7 +48,7 @@ if (isset($_POST['tagssub'])){
         if(($res1)){
             header("Location: ../home.php");
         }else{
-            echo " There was a problem with the creation of you user Post plase try again or contact suport staff";
+            header("Location: ../home.php?catFail");
             }
    
 
@@ -56,7 +56,7 @@ if (isset($_POST['tagssub'])){
     
     
 }else{
-    header("Location: ../home.php?Post_failed");
+    header("Location: ../home.php?catFail");
 }
 
 ?>

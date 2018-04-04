@@ -42,7 +42,7 @@ if (isset($_POST['idea-title'])){
     $sql3 = " SELECT * FROM Plebosoft_Ideas WHERE title='".$IdeaT."'";
     $res3 = mysqli_query($dblink,$sql3);
     if(mysqli_num_rows($res3)>0){
-        echo " post alreay exists";
+        header("location: ../new-idea.php?AX");
     }else{
      
     $sql1 = " INSERT INTO Plebosoft_Ideas (title, ideaText, userID, isAnnonymus, submitedDate, deleted) VALUES ('".$IdeaT."','".$Idea."','".$UID."','".$anon."','".date('Y-m-d')."','".$boolean."')";
@@ -92,20 +92,20 @@ if (isset($_POST['idea-title'])){
         
             mail("{$email}", "NEWPOST", "the Post by {$_SESSION['username']}\n {$message}", "From: wh6785w@gre.ac.uk\r\n");
         
-           header("Location: ../subject.php?id={$_SESSION['departmentID']}");
+           header("Location: ../Option_code.php?id={$ID}");
         }else{
-            echo " There was a problem with the creation of you user Post plase try again or contact suport staff";
+            header("location: ../home.php?databaseFailure");
             }
  
     }
               
 }else{
-    echo"fail";
+    header("location: ../home.php?databaseFailure");
 }
                }else{
-                   echo "No more Posts";
+                   header("location: ../home.php?IdeasEnd");
                }
-               }else{echo "db Failed";}
+               }else{header("location: ../home.php?databaseFailure");}
 }else{
-    echo "post failed"; 
+    IdeaFail 
 }

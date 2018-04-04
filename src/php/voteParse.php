@@ -15,7 +15,7 @@ if(isset($_POST['vote'])){
         if(($res)){
             header("Location: ../idea.php?id={$_POST['ID']}");
         }else{
-            echo " There was a problem with the creation of you user Post plase try again or contact suport staff";
+            header("Location: ../idea.php?id={$_POST['ID']}&&VoteFail");
             }
     }else if($_POST['vote'] == "Down-Vote"){
     $vote.=false;   
@@ -24,7 +24,7 @@ if(isset($_POST['vote'])){
         if(($res)){
             header("Location: ../idea.php?id={$_POST['ID']}");
         }else{
-            echo " There was a problem with the creation of you user Post plase try again or contact suport staff";
+            header("Location: ../idea.php?id={$_POST['ID']}&&VoteFail");
             }
     }
 }

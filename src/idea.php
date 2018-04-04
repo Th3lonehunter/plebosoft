@@ -3,6 +3,8 @@ session_start();
   ob_start();
 include_once("../src/php/DBConnect.php");
 
+$VoteFail = isset($_GET['VoteFail']);
+$ReportFail = isset($_GET['FailReport']);
 
 if(isset($_POST['files']))
 {
@@ -67,7 +69,10 @@ if(isset($_POST['files']))
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Greenwich University Commenting</title>
   </head>
-
+<?php if($VoteFail): ?><p>Vote Fail</p>   
+                <?php endif; ?>
+<?php if($ReportFail): ?><p>Report Failed to post</p>   
+                <?php endif; ?>
   <body>
     <div class="page">
       <!-- Header -->
