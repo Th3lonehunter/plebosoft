@@ -114,12 +114,20 @@ else {
                
                $sql6 = mysqli_query($dblink,"UPDATE Plebosoft_Ideas SET viewCount='".$counter."' WHERE ideaID={$ID}");
                 if($sql6){}
-            
+            $sql8 = "SELECT * FROM Plebosoft_Ideas_Categories INNER JOIN Plebosoft_Categories ON Plebosoft_Ideas_Categories.categoryID = Plebosoft_Categories.CategoryID WHERE Plebosoft_Ideas_Categories.ideaID={$_GET['id']}";
+             $res8 = mysqli_query($dblink,$sql8) or die(mysqli_error());
+           if(mysqli_num_rows($res8) > 0){
+           
+           }
          echo " <h3>".$T."</h3>
           <div class='idea-text'>
-            <p>".$tx."</p>
+            <p>".$tx."</p> <br>";
+               ?>
+            <p>Tags For this Post:<br><?php while($row8 = mysqli_fetch_assoc($res8)){
+              echo $row8['name']."<br>"; 
+           }?></p>
             
-            <div class='idea-info'>
+           <?php echo "<div class='idea-info'>
               <div>
                 <p>".$un."<img src='{$image}' alt='Avitar'></p>
               </div>
