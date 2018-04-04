@@ -33,6 +33,7 @@ else {
           <?php if($ax): ?><p>Idea already Present</p>   
                 <?php endif; ?>
             <?php
+      if(isset($_SESSION['uid'])){
      echo "<div class='section'>
         <div class='new-idea'>
           <form action='../src/php/IdeaParse.php' method='POST' enctype='multipart/form-data'>
@@ -59,6 +60,9 @@ else {
       </div>
     </div>
   </body>";
+      }else{
+        header("location: home.php");
+      }
     }else{
         header("location: home.php");
     }
