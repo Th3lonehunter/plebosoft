@@ -21,11 +21,11 @@ $res = mysqli_query($dblink, $sql);
   
            <script type="text/javascript">  
            google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(Pie);
 
-function drawChart() {
+function Pie() {
 
-    var data = google.visualization.arrayToDataTable([
+    var mysqlData = google.visualization.arrayToDataTable([
       ['Deparment', 'Num'],
       <?php
       if($res->num_rows > 0){
@@ -38,7 +38,7 @@ function drawChart() {
       ?>
     ]);
     
-    var options = {
+    var PieSetting = {
         
         width: 900,
         height: 500,
@@ -47,7 +47,7 @@ function drawChart() {
     
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
     
-    chart.draw(data, options);
+    chart.draw(mysqlData, PieSetting);
     
     
 }

@@ -37,10 +37,10 @@ include_once("../src/php/DBConnect.php");
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawS);
+      google.charts.setOnLoadCallback(BarChart);
 
-      function drawS() {
-        var data = new google.visualization.arrayToDataTable([
+      function BarChart() {
+        var mysqlData = new google.visualization.arrayToDataTable([
           ['', 'Number of Anonymous',{ role: "style" }],
             ['Annonymus Ideas','<?php echo $annonIdea; ?>','silver'],
             ['Visable Ideas','<?php echo $annonIdea3; ?>','silver'],
@@ -51,7 +51,7 @@ include_once("../src/php/DBConnect.php");
 
          
           
-        var options = {
+        var Settings = {
          width: 600,
         height: 400,
           legend: { position: 'none' },
@@ -68,7 +68,7 @@ include_once("../src/php/DBConnect.php");
 
         var chart = new google.charts.Bar(document.getElementById('ANNON'));
         
-        chart.draw(data, options);
+        chart.draw(data, Settings);
       };
     </script>
   </head>

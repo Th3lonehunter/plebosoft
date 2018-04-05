@@ -36,10 +36,10 @@ include_once("../src/php/DBConnect.php");
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
+      google.charts.setOnLoadCallback(BarChart);
 
-      function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
+      function BarChart() {
+        var mysqlData = new google.visualization.arrayToDataTable([
           ['', 'Ideas Comment Count',{ role: "style" }],
             ['Ideas with no comments','<?php echo $nocoms; ?>','silver'],
             ['Ideas with comments','<?php echo $coms; ?>','silver']
@@ -48,7 +48,7 @@ include_once("../src/php/DBConnect.php");
 
          
           
-        var options = {
+        var Settings = {
          width: 600,
         height: 400,
           legend: { position: 'none' },
@@ -65,7 +65,7 @@ include_once("../src/php/DBConnect.php");
 
         var chart = new google.charts.Bar(document.getElementById('ANNON'));
         
-        chart.draw(data, options);
+        chart.draw(mysqlData, Settings);
       };
     </script>
   </head>
