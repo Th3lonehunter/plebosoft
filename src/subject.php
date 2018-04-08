@@ -22,7 +22,7 @@ include_once("../src/php/DBConnect.php");
           <div class="nav-home"><a href="home.php">Home</a></div>
 
           <?php if (isset($_SESSION['uid'])){
-echo "<div class=.nav-user'><img src='{$_SESSION['Image']}' alt='Avitar'> <br> Hello:".$_SESSION['NickName']." &bull; <a href='../src/php/Logout.php'>Logout</a></div>";     
+echo "<div class=.nav-user'><img src='{$_SESSION['Image']}' alt='Avitar'> Hello:".$_SESSION['NickName']." &bull; <a href='../src/php/Logout.php'>Logout</a></div>";
  }
 else {
  echo"<div class=.nav-user'>&bull;<a href='login.php'>Login</a></div>";
@@ -31,10 +31,10 @@ else {
         </div>
       </div>
 <?php
-        
-        
+
+
         $ideaL = 5;
-        
+
         $sqlP = "SELECT count(ideaID) FROM Plebosoft_Ideas";
         $ret= mysqli_query($dblink,$sqlP);
         if(! $ret){
@@ -50,35 +50,35 @@ else {
             $offset=0;
         }
         $left_idea = $ideaC - ($page * $ideaL);
-        
-        
+
+
         if(isset($_POST['viewoption'])){
             $filter=$_POST['viewoption'];
         }else{
             $filter="";
         }
-        
-        
-        
+
+
+
      echo" <div class='main-body'>
      <form method='POST'>
      <p>Display by:<a href='subject.php?id={$_GET['id']}&&page=-1&&view=newest'>[Newest]</a>-
      <a href='subject.php?id={$_GET['id']}&&page=-1&&view=Upvotes'>[Most Upvotes]</a>-  <a href='subject.php?id={$_GET['id']}&&page=-1&&view=MostDownVotes'>[Most DownVotes]</a>-
      <a href='subject.php?id={$_GET['id']}&&page=-1&&view=mostviewed'>[most viewed]</a>-
      <a href='subject.php?id={$_GET['id']}&&page=-1&&view=Latestcomments'>[Latest comments]</a></p>
-     
-   
-     
+
+
+
         <h3>Select an Idea to view:</h3>
         <p>Alternatively, you can create a new idea <a href='new-idea.php'>here.</a>  ";
         if(isset($_GET['view'])){
             if($_GET['view'] !=""){
         if($_GET['view']=='newest'){
-            
+
            echo " view by newest </p>
         <div class='table-container'>
            <div class='table'>";
-              
+
               $sql = "SELECT * FROM Plebosoft_Ideas INNER JOIN Plebosoft_Staff ON Plebosoft_Ideas.userID = Plebosoft_Staff.staffID  WHERE Plebosoft_Staff.departmentID={$_GET['id']} ORDER BY Plebosoft_Ideas.submitedDate DESC LIMIT $offset,$ideaL";
             $res = mysqli_query($dblink,$sql) or die(mysqli_error($dblink));
            if(mysqli_num_rows($res) > 0){
@@ -101,13 +101,13 @@ else {
               </div>
             </div>";
                 }
-               
+
                }
             $View =  $_GET['view'];
            if($page > 0){
                    $last = $page-2;
-               
-               
+
+
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a> |";
                    echo "<a href = \"subject.php?id={$_GET['id']}&&page=$page&&view=$View\">Next 5 Records</a>";
                     }else if( $page == 0 ) {
@@ -116,22 +116,22 @@ else {
                     $last = $page - 2;
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a>";
          }
-            
+
         echo"  </div>
         </div>
       </div>";
-             
-            
+
+
         }else if($_GET['view']=='Upvotes'){
-         
+
             echo " view by Upvotes </p>
         <div class='table-container'>
            <div class='table'>";
               $UPV = 1;
             $sql ="SELECT *, COUNT(Plebosoft_Votes.ideaID) as count FROM Plebosoft_Votes INNER JOIN Plebosoft_Ideas ON Plebosoft_Votes.ideaID = Plebosoft_Ideas.ideaID INNER JOIN Plebosoft_Staff ON Plebosoft_Ideas.userID = Plebosoft_Staff.staffID WHERE Plebosoft_Staff.departmentID={$_GET['id']} and Plebosoft_Votes.direction={$UPV} GROUP BY Plebosoft_Votes.ideaID ORDER BY count DESC  LIMIT $offset,$ideaL";
-         
+
             $res = mysqli_query($dblink,$sql) or die(mysqli_error($dblink));
-        
+
            if(mysqli_num_rows($res) > 0){
            while($row = mysqli_fetch_array($res, MYSQLI_ASSOC)){
             $T= $row['title'];
@@ -154,13 +154,13 @@ else {
               </div>
             </div>";
                 }
-               
+
                }
            $View =  $_GET['view'];
            if($page > 0){
                    $last = $page-2;
-               
-               
+
+
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a> |";
                    echo "<a href = \"subject.php?id={$_GET['id']}&&page=$page&&view=$View\">Next 5 Records</a>";
                     }else if( $page == 0 ) {
@@ -172,9 +172,9 @@ else {
         echo"  </div>
         </div>
       </div>";
-            
+
         }else if($_GET['view']=='MostDownVotes'){
-      
+
             echo " view by Most Down Votes </p>
         <div class='table-container'>
            <div class='table'>";
@@ -203,13 +203,13 @@ else {
               </div>
             </div>";
                 }
-               
+
                }
            $View =  $_GET['view'];
            if($page > 0){
                    $last = $page-2;
-               
-               
+
+
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a> |";
                    echo "<a href = \"subject.php?id={$_GET['id']}&&page=$page&&view=$View\">Next 5 Records</a>";
                     }else if( $page == 0 ) {
@@ -218,18 +218,18 @@ else {
                     $last = $page - 2;
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a>";
          }
-            
+
         echo"  </div>
         </div>
       </div>";
-            
-            
+
+
         }else if($_GET['view']=='mostviewed'){
-        
+
              echo " view by most viewed </p>
         <div class='table-container'>
            <div class='table'>";
-              
+
               $sql = "SELECT * FROM Plebosoft_Ideas INNER JOIN Plebosoft_Staff ON Plebosoft_Ideas.userID = Plebosoft_Staff.staffID WHERE Plebosoft_Staff.departmentID={$_GET['id']} ORDER BY Plebosoft_Ideas.viewCount DESC LIMIT $offset,$ideaL";
             $res = mysqli_query($dblink,$sql) or die(mysqli_error($dblink));
            if(mysqli_num_rows($res) > 0){
@@ -254,13 +254,13 @@ else {
               </div>
             </div>";
                 }
-               
+
                }
            $View =  $_GET['view'];
            if($page > 0){
                    $last = $page-2;
-               
-               
+
+
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a> |";
                    echo "<a href = \"subject.php?id={$_GET['id']}&&page=$page&&view=$View\">Next 5 Records</a>";
                     }else if( $page == 0 ) {
@@ -269,18 +269,18 @@ else {
                     $last = $page - 2;
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a>";
          }
-            
+
         echo"  </div>
         </div>
       </div>";
-            
+
         }else if($_GET['view']=='Latestcomments'){
-            
-           
+
+
             echo " view by Latest comments </p>
         <div class='table-container'>
            <div class='table'>";
-              
+
               $sql = "SELECT * FROM Plebosoft_Ideas INNER JOIN Plebosoft_Staff ON Plebosoft_Ideas.userID = Plebosoft_Staff.staffID INNER JOIN Plebosoft_Comments ON Plebosoft_Ideas.ideaID = Plebosoft_Comments.ideaID WHERE Plebosoft_Staff.departmentID={$_GET['id']} ORDER BY Plebosoft_Comments.commentedDate DESC LIMIT $offset,$ideaL";
             $res = mysqli_query($dblink,$sql) or die(mysqli_error($dblink));
            if(mysqli_num_rows($res) > 0){
@@ -305,13 +305,13 @@ else {
               </div>
             </div>";
                 }
-               
+
                }
            $View =  $_GET['view'];
            if($page > 0){
                    $last = $page-2;
-               
-               
+
+
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a> |";
                    echo "<a href = \"subject.php?id={$_GET['id']}&&page=$page&&view=$View\">Next 5 Records</a>";
                     }else if( $page == 0 ) {
@@ -320,18 +320,18 @@ else {
                     $last = $page - 2;
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a>";
          }
-            
+
         echo"  </div>
         </div>
       </div>";
-            
+
         }}else{
-            
-        
+
+
         echo "</p>
         <div class='table-container'>
           <div class='table'>";
-              
+
               $sql = "SELECT * FROM Plebosoft_Ideas INNER JOIN Plebosoft_Staff ON Plebosoft_Ideas.userID = Plebosoft_Staff.staffID WHERE Plebosoft_Staff.departmentID={$_GET['id']} LIMIT $offset,$ideaL";
             $res = mysqli_query($dblink,$sql) or die(mysqli_error($dblink));
            if(mysqli_num_rows($res) > 0){
@@ -354,13 +354,13 @@ else {
               </div>
             </div>";
                 }
-               
+
                }
            $View =  $_GET['view'];
            if($page > 0){
                    $last = $page-2;
-               
-               
+
+
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a> |";
                    echo "<a href = \"subject.php?id={$_GET['id']}&&page=$page&&view=$View\">Next 5 Records</a>";
                     }else if( $page == 0 ) {
@@ -369,18 +369,18 @@ else {
                     $last = $page - 2;
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=$View\">Last 5 Records</a>";
          }
-            
+
         echo"  </div>
         </div>
       </div>";
         }
         }else{
-            
-        
+
+
         echo "</p>
         <div class='table-container'>
           <div class='table'>";
-              
+
               $sql = "SELECT * FROM Plebosoft_Ideas INNER JOIN Plebosoft_Staff ON Plebosoft_Ideas.userID = Plebosoft_Staff.staffID WHERE Plebosoft_Staff.departmentID={$_GET['id']} LIMIT $offset,$ideaL";
             $res = mysqli_query($dblink,$sql) or die(mysqli_error($dblink));
            if(mysqli_num_rows($res) > 0){
@@ -403,13 +403,13 @@ else {
               </div>
             </div>";
                 }
-               
+
                }
-           
+
            if($page > 0){
                    $last = $page-2;
-               
-               
+
+
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=\">Last 5 Records</a> |";
                    echo "<a href = \"subject.php?id={$_GET['id']}&&page=$page&&view=\">Next 5 Records</a>";
                     }else if( $page == 0 ) {
@@ -418,7 +418,7 @@ else {
                     $last = $page - 2;
                     echo "<a href = \"subject.php?id={$_GET['id']}&&page=$last&&view=\">Last 5 Records</a>";
          }
-            
+
         echo"  </div>
         </div>
       </div>";

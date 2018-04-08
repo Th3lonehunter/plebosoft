@@ -19,37 +19,37 @@ include_once("../src/php/DBConnect.php");
         <div class="nav">
           <div class="nav-home"><a href="home.php">Home</a></div>
           <?php if (isset($_SESSION['uid'])){
-echo "<div class=.nav-user'><img src='{$_SESSION['Image']}' alt='Avitar'> <br> Hello:".$_SESSION['NickName']." &bull; <a href='../src/php/Logout.php'>Logout</a></div>";     
- }
-else {
- echo"<div class=.nav-user'>&bull;<a href='login.php'>Login</a></div>";
-}
-            
-    if(isset($_SESSION['terms'])){ 
+            echo "<div class=.nav-user'><img src='{$_SESSION['Image']}' alt='Avitar'> Hello:".$_SESSION['NickName']." &bull; <a href='../src/php/Logout.php'>Logout</a></div>";
+             }
+            else {
+             echo"<div class=.nav-user'>&bull;<a href='login.php'>Login</a></div>";
+            }
+
+    if(isset($_SESSION['terms'])){
         $ax = isset($_GET['ax']);
       echo"</div>
       </div>";
         ?>
-          <?php if($ax): ?><p>Idea already Present</p>   
+          <?php if($ax): ?><p>Idea already Present</p>
                 <?php endif; ?>
             <?php
       if(isset($_SESSION['uid'])){
-     echo "<div class='section'>
+     echo "<div class='page'>
         <div class='new-idea'>
           <form action='../src/php/IdeaParse.php' method='POST' enctype='multipart/form-data'>
             <div class='idea-form'>
               <h3>Create an Idea:</h3>
-              <div class='idea-title'>
+              <div>
                 <input id='idea-title' name='idea-title' type='text' class='form-input' placeholder='Title' required>
               </div>
-              <div class='idea-text'>
+              <div>
                 <textarea name='text' id='idea-text' cols='120' rows='15'></textarea>
               </div>
-              <div class='idea-attachment'>
+              <div>
                 <input  name='idea-file' type='file'>
               </div>
-                
-                
+
+
               <div class='idea-submit>
                   <p>Do you want the post to be anonymous<input type='checkbox' name='anonymous' value='yes'></p>
                 <input type='submit' value='Submit Idea'>

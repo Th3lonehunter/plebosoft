@@ -268,7 +268,7 @@ a:hover {
   flex-wrap: wrap;
   flex-direction: column;
 }
-input {
+.login-form input {
   color: charcoal;
   background-color: rgba(200,200,200,.5);
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
@@ -282,42 +282,33 @@ input {
 }
 
 /* Ideas */
-.idea-text {
-  padding: 1em;
-}
-.idea-info {
+.idea-form {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  font-size: small;
+}
+.new-idea form {
+  background-color: white;
+  padding: 2em;
+  padding-bottom: 3em;
+  border-radius: 8px;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 10px 40px -4px rgba(0,0,0,0.25);
 }
 
 /* Mobile Style */
 @media only screen and (max-width: 400px) {
-	body {
 
-	}
 }
 
 /* Tablet Style */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
-  form {
-    background-color: white;
-    padding: 2em;
-    padding-bottom: 3em;
-    border-radius: 8px;
-    max-width: 960px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 10px 40px -4px rgba(0,0,0,0.25);
-  }
+
 }
 
 @media only screen and (min-width: 961px) {
-  form {
+  .login form {
     background-color: white;
     padding: 2em;
     padding-bottom: 3em;
